@@ -5,35 +5,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>La Tavola — Italian Restaurant</title>
+    <meta name="description"
+          content="La Tavola — authentic Italian cuisine, handmade pasta, fresh pizza and unforgettable flavors.">
 
+    <meta name="theme-color" content="#10100f">
+
+    <title>La Tavola — Authentic Italian Restaurant</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-    <header class="header">
+    <header class="header" id="header">
+
         <nav class="navbar container">
 
-            <a href="#home" class="logo">
+            <a href="#home" class="logo" aria-label="La Tavola Home">
                 La<span>Tavola</span>
             </a>
 
-            <button class="menu-toggle" id="menuToggle">
-                ☰
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="navLinks"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
 
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#contact">Contact</a></li>
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">Our Story</a>
+                </li>
+
+                <li>
+                    <a href="#menu">Menu</a>
+                </li>
+
+                <li>
+                    <a href="#reservation">Reservation</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
             </ul>
 
             <a href="#reservation" class="nav-btn">
@@ -41,12 +80,19 @@
             </a>
 
         </nav>
+
     </header>
 
 
-    <!-- ================= HERO ================= -->
+    <!-- =========================
+         MAIN
+    ========================== -->
 
     <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
 
         <section class="hero" id="home">
 
@@ -54,19 +100,24 @@
 
             <div class="hero-content container">
 
-                <p class="hero-subtitle">AUTHENTIC ITALIAN CUISINE</p>
+                <p class="hero-subtitle">
+                    AUTHENTIC ITALIAN CUISINE
+                </p>
 
                 <h1>
-                    Taste the passion<br>
+                    Taste the passion
+                    <br>
                     <span>behind every plate.</span>
                 </h1>
 
                 <p class="hero-description">
-                    Fresh ingredients, traditional recipes and unforgettable
-                    flavors prepared with love every day.
+                    Fresh ingredients, handmade pasta and traditional
+                    Italian recipes — prepared with passion and served
+                    with unforgettable flavor.
                 </p>
 
                 <div class="hero-buttons">
+
                     <a href="#menu" class="btn btn-primary">
                         Explore Menu
                     </a>
@@ -74,6 +125,26 @@
                     <a href="#reservation" class="btn btn-outline">
                         Book a Table
                     </a>
+
+                </div>
+
+                <div class="hero-stats">
+
+                    <div>
+                        <strong>12+</strong>
+                        <span>Years of experience</span>
+                    </div>
+
+                    <div>
+                        <strong>30+</strong>
+                        <span>Italian recipes</span>
+                    </div>
+
+                    <div>
+                        <strong>4.9</strong>
+                        <span>Guest rating</span>
+                    </div>
+
                 </div>
 
             </div>
@@ -81,74 +152,148 @@
         </section>
 
 
-        <!-- ================= FEATURES ================= -->
+        <!-- =========================
+             FEATURES
+        ========================== -->
 
         <section class="features">
 
             <div class="container features-grid">
 
-                <div class="feature">
-                    <div class="feature-icon">🍝</div>
-                    <h3>Fresh Ingredients</h3>
-                    <p>Only quality ingredients selected every morning.</p>
-                </div>
+                <article class="feature">
 
-                <div class="feature">
-                    <div class="feature-icon">👨‍🍳</div>
-                    <h3>Expert Chefs</h3>
-                    <p>Traditional recipes created by passionate chefs.</p>
-                </div>
+                    <div class="feature-icon">
+                        ✦
+                    </div>
 
-                <div class="feature">
-                    <div class="feature-icon">❤️</div>
-                    <h3>Made With Love</h3>
-                    <p>Every plate is prepared with care and attention.</p>
-                </div>
+                    <h3>
+                        Fresh Ingredients
+                    </h3>
+
+                    <p>
+                        Carefully selected ingredients delivered fresh
+                        and prepared every day.
+                    </p>
+
+                </article>
+
+
+                <article class="feature">
+
+                    <div class="feature-icon">
+                        ♨
+                    </div>
+
+                    <h3>
+                        Traditional Recipes
+                    </h3>
+
+                    <p>
+                        Authentic Italian recipes inspired by generations
+                        of culinary tradition.
+                    </p>
+
+                </article>
+
+
+                <article class="feature">
+
+                    <div class="feature-icon">
+                        ♥
+                    </div>
+
+                    <h3>
+                        Made With Love
+                    </h3>
+
+                    <p>
+                        Every dish is prepared with passion, patience
+                        and attention to every detail.
+                    </p>
+
+                </article>
 
             </div>
 
         </section>
 
 
-        <!-- ================= ABOUT ================= -->
+        <!-- =========================
+             ABOUT
+        ========================== -->
 
         <section class="about section" id="about">
 
             <div class="container about-grid">
 
-                <div class="about-image">
+                <div class="about-image reveal">
+
                     <div class="image-card">
-                        <div class="food-placeholder">🍕</div>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=85"
+                            alt="Italian restaurant interior"
+                            loading="lazy"
+                        >
+
                     </div>
 
                     <div class="experience">
+
                         <strong>12+</strong>
-                        <span>Years of<br>Experience</span>
+
+                        <span>
+                            Years of
+                            <br>
+                            Experience
+                        </span>
+
                     </div>
+
                 </div>
 
-                <div class="about-content">
 
-                    <p class="section-label">OUR STORY</p>
+                <div class="about-content reveal">
+
+                    <p class="section-label">
+                        OUR STORY
+                    </p>
 
                     <h2>
-                        Where tradition<br>
+                        Where tradition
+                        <br>
                         meets <span>modern taste.</span>
                     </h2>
 
                     <p>
-                        La Tavola started with a simple idea: create a place
-                        where people can enjoy authentic Italian food in a
-                        warm and welcoming atmosphere.
+                        La Tavola began with one simple idea:
+                        create a place where people can experience
+                        the warmth and flavor of authentic Italian cuisine.
                     </p>
 
                     <p>
-                        From handmade pasta to freshly baked pizza, every
-                        dish is inspired by traditional Italian cuisine.
+                        From handmade pasta to freshly baked pizza,
+                        every dish combines traditional recipes,
+                        quality ingredients and a modern touch.
                     </p>
 
+                    <div class="about-highlights">
+
+                        <div>
+                            <strong>100%</strong>
+                            <span>Fresh ingredients</span>
+                        </div>
+
+                        <div>
+                            <strong>30+</strong>
+                            <span>Signature dishes</span>
+                        </div>
+
+                    </div>
+
                     <a href="#menu" class="text-link">
-                        Discover our menu →
+                        Discover our menu
+                        <span>→</span>
                     </a>
 
                 </div>
@@ -158,155 +303,305 @@
         </section>
 
 
-        <!-- ================= MENU ================= -->
+        <!-- =========================
+             MENU
+        ========================== -->
 
         <section class="menu section" id="menu">
 
             <div class="container">
 
-                <div class="section-heading">
+                <div class="section-heading reveal">
 
-                    <p class="section-label">OUR MENU</p>
+                    <p class="section-label">
+                        OUR MENU
+                    </p>
 
                     <h2>
-                        Favorites from<br>
+                        Favorites from
+                        <br>
                         <span>our kitchen.</span>
                     </h2>
 
                     <p>
-                        Simple ingredients. Great recipes. Amazing taste.
+                        Simple ingredients. Traditional recipes.
+                        Exceptional taste.
                     </p>
 
                 </div>
 
 
+                <!-- FILTERS -->
+
                 <div class="filters">
 
-                    <button class="filter-btn active" data-filter="all">
+                    <button
+                        class="filter-btn active"
+                        data-filter="all"
+                        type="button"
+                    >
                         All
                     </button>
 
-                    <button class="filter-btn" data-filter="pizza">
+                    <button
+                        class="filter-btn"
+                        data-filter="pizza"
+                        type="button"
+                    >
                         Pizza
                     </button>
 
-                    <button class="filter-btn" data-filter="pasta">
+                    <button
+                        class="filter-btn"
+                        data-filter="pasta"
+                        type="button"
+                    >
                         Pasta
                     </button>
 
-                    <button class="filter-btn" data-filter="dessert">
+                    <button
+                        class="filter-btn"
+                        data-filter="dessert"
+                        type="button"
+                    >
                         Dessert
                     </button>
 
                 </div>
 
 
+                <!-- MENU GRID -->
+
                 <div class="menu-grid">
 
-                    <article class="menu-card" data-category="pizza">
 
-                        <div class="food-image pizza">
-                            🍕
-                            <span class="popular">Popular</span>
+                    <!-- PIZZA -->
+
+                    <article
+                        class="menu-card reveal"
+                        data-category="pizza"
+                    >
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=85"
+                                alt="Margherita pizza"
+                                loading="lazy"
+                            >
+
+                            <span class="popular">
+                                Popular
+                            </span>
+
                         </div>
 
                         <div class="menu-info">
+
                             <div>
-                                <h3>Margherita</h3>
-                                <p>Tomato, mozzarella, basil</p>
+                                <h3>
+                                    Margherita
+                                </h3>
+
+                                <p>
+                                    Tomato, mozzarella, basil
+                                </p>
                             </div>
 
-                            <strong>$12</strong>
+                            <strong>
+                                $12
+                            </strong>
+
                         </div>
 
                     </article>
 
 
-                    <article class="menu-card" data-category="pizza">
+                    <!-- PIZZA -->
 
-                        <div class="food-image pizza">
-                            🍕
+                    <article
+                        class="menu-card reveal"
+                        data-category="pizza"
+                    >
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=900&q=85"
+                                alt="Truffle mushroom pizza"
+                                loading="lazy"
+                            >
+
                         </div>
 
                         <div class="menu-info">
+
                             <div>
-                                <h3>Truffle Pizza</h3>
-                                <p>Mozzarella, truffle, mushrooms</p>
+                                <h3>
+                                    Truffle Pizza
+                                </h3>
+
+                                <p>
+                                    Mozzarella, truffle, mushrooms
+                                </p>
                             </div>
 
-                            <strong>$18</strong>
+                            <strong>
+                                $18
+                            </strong>
+
                         </div>
 
                     </article>
 
 
-                    <article class="menu-card" data-category="pasta">
+                    <!-- PASTA -->
 
-                        <div class="food-image pasta">
-                            🍝
+                    <article
+                        class="menu-card reveal"
+                        data-category="pasta"
+                    >
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=85"
+                                alt="Italian carbonara pasta"
+                                loading="lazy"
+                            >
+
                         </div>
 
                         <div class="menu-info">
+
                             <div>
-                                <h3>Carbonara</h3>
-                                <p>Egg, pecorino, guanciale</p>
+                                <h3>
+                                    Carbonara
+                                </h3>
+
+                                <p>
+                                    Egg, pecorino, guanciale
+                                </p>
                             </div>
 
-                            <strong>$15</strong>
+                            <strong>
+                                $15
+                            </strong>
+
                         </div>
 
                     </article>
 
 
-                    <article class="menu-card" data-category="pasta">
+                    <!-- PASTA -->
 
-                        <div class="food-image pasta">
-                            🍝
+                    <article
+                        class="menu-card reveal"
+                        data-category="pasta"
+                    >
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=900&q=85"
+                                alt="Creamy Italian pasta"
+                                loading="lazy"
+                            >
+
                         </div>
 
                         <div class="menu-info">
+
                             <div>
-                                <h3>Truffle Pasta</h3>
-                                <p>Fresh pasta, cream, truffle</p>
+                                <h3>
+                                    Truffle Pasta
+                                </h3>
+
+                                <p>
+                                    Fresh pasta, cream, truffle
+                                </p>
                             </div>
 
-                            <strong>$19</strong>
+                            <strong>
+                                $19
+                            </strong>
+
                         </div>
 
                     </article>
 
 
-                    <article class="menu-card" data-category="dessert">
+                    <!-- DESSERT -->
 
-                        <div class="food-image dessert">
-                            🍰
+                    <article
+                        class="menu-card reveal"
+                        data-category="dessert"
+                    >
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=900&q=85"
+                                alt="Italian tiramisu"
+                                loading="lazy"
+                            >
+
                         </div>
 
                         <div class="menu-info">
+
                             <div>
-                                <h3>Tiramisu</h3>
-                                <p>Mascarpone, coffee, cocoa</p>
+                                <h3>
+                                    Tiramisu
+                                </h3>
+
+                                <p>
+                                    Mascarpone, coffee, cocoa
+                                </p>
                             </div>
 
-                            <strong>$8</strong>
+                            <strong>
+                                $8
+                            </strong>
+
                         </div>
 
                     </article>
 
 
-                    <article class="menu-card" data-category="dessert">
+                    <!-- DESSERT -->
 
-                        <div class="food-image dessert">
-                            🍮
+                    <article
+                        class="menu-card reveal"
+                        data-category="dessert"
+                    >
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=85"
+                                alt="Panna cotta dessert"
+                                loading="lazy"
+                            >
+
                         </div>
 
                         <div class="menu-info">
+
                             <div>
-                                <h3>Panna Cotta</h3>
-                                <p>Vanilla cream, berries</p>
+                                <h3>
+                                    Panna Cotta
+                                </h3>
+
+                                <p>
+                                    Vanilla cream, berries
+                                </p>
                             </div>
 
-                            <strong>$7</strong>
+                            <strong>
+                                $7
+                            </strong>
+
                         </div>
 
                     </article>
@@ -318,20 +613,33 @@
         </section>
 
 
-        <!-- ================= CTA ================= -->
+        <!-- =========================
+             CTA
+        ========================== -->
 
         <section class="cta">
 
-            <div class="container cta-content">
+            <div class="container cta-content reveal">
 
-                <p class="section-label">YOUR TABLE IS WAITING</p>
+                <p class="section-label">
+                    YOUR TABLE IS WAITING
+                </p>
 
                 <h2>
-                    Good food.<br>
+                    Good food.
+                    <br>
                     <span>Good moments.</span>
                 </h2>
 
-                <a href="#reservation" class="btn btn-primary">
+                <p>
+                    Come share a meal, create memories and
+                    experience the taste of Italy.
+                </p>
+
+                <a
+                    href="#reservation"
+                    class="btn btn-primary"
+                >
                     Reserve Your Table
                 </a>
 
@@ -340,60 +648,129 @@
         </section>
 
 
-        <!-- ================= RESERVATION ================= -->
+        <!-- =========================
+             RESERVATION
+        ========================== -->
 
-        <section class="reservation section" id="reservation">
+        <section
+            class="reservation section"
+            id="reservation"
+        >
 
             <div class="container reservation-box">
 
-                <div>
-                    <p class="section-label">RESERVATION</p>
+                <div class="reservation-content reveal">
+
+                    <p class="section-label">
+                        RESERVATION
+                    </p>
 
                     <h2>
-                        Book your<br>
+                        Book your
+                        <br>
                         <span>table.</span>
                     </h2>
 
                     <p>
-                        Choose your date, time and number of guests.
+                        Choose your date, time and number
+                        of guests. We'll take care of the rest.
                     </p>
+
+                    <div class="reservation-note">
+                        <span>✦</span>
+                        <p>
+                            Reservations are recommended,
+                            especially on weekends.
+                        </p>
+                    </div>
+
                 </div>
 
 
-                <form id="reservationForm">
+                <form
+                    id="reservationForm"
+                    class="reveal"
+                >
 
                     <div class="form-group">
-                        <label>Name</label>
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
                         <input
                             type="text"
                             id="name"
+                            name="name"
                             placeholder="Your name"
+                            autocomplete="name"
                             required
                         >
+
                     </div>
+
 
                     <div class="form-row">
 
                         <div class="form-group">
-                            <label>Date</label>
+
+                            <label for="date">
+                                Date
+                            </label>
+
                             <input
                                 type="date"
                                 id="date"
+                                name="date"
                                 required
                             >
+
                         </div>
 
+
                         <div class="form-group">
-                            <label>Guests</label>
 
-                            <select id="guests">
+                            <label for="time">
+                                Time
+                            </label>
 
-                                <option value="1">1 Guest</option>
-                                <option value="2">2 Guests</option>
-                                <option value="3">3 Guests</option>
-                                <option value="4">4 Guests</option>
-                                <option value="5">5 Guests</option>
-                                <option value="6">6 Guests</option>
+                            <select
+                                id="time"
+                                name="time"
+                                required
+                            >
+
+                                <option value="">
+                                    Select time
+                                </option>
+
+                                <option value="18:00">
+                                    18:00
+                                </option>
+
+                                <option value="18:30">
+                                    18:30
+                                </option>
+
+                                <option value="19:00">
+                                    19:00
+                                </option>
+
+                                <option value="19:30">
+                                    19:30
+                                </option>
+
+                                <option value="20:00">
+                                    20:00
+                                </option>
+
+                                <option value="20:30">
+                                    20:30
+                                </option>
+
+                                <option value="21:00">
+                                    21:00
+                                </option>
 
                             </select>
 
@@ -401,7 +778,78 @@
 
                     </div>
 
-                    <button type="submit" class="btn btn-primary">
+
+                    <div class="form-group">
+
+                        <label for="guests">
+                            Number of Guests
+                        </label>
+
+                        <select
+                            id="guests"
+                            name="guests"
+                            required
+                        >
+
+                            <option value="1">
+                                1 Guest
+                            </option>
+
+                            <option value="2" selected>
+                                2 Guests
+                            </option>
+
+                            <option value="3">
+                                3 Guests
+                            </option>
+
+                            <option value="4">
+                                4 Guests
+                            </option>
+
+                            <option value="5">
+                                5 Guests
+                            </option>
+
+                            <option value="6">
+                                6 Guests
+                            </option>
+
+                            <option value="7">
+                                7 Guests
+                            </option>
+
+                            <option value="8">
+                                8 Guests
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="+39 000 000 0000"
+                            autocomplete="tel"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
                         Confirm Reservation
                     </button>
 
@@ -412,45 +860,115 @@
         </section>
 
 
-        <!-- ================= CONTACT ================= -->
+        <!-- =========================
+             CONTACT
+        ========================== -->
 
-        <section class="contact section" id="contact">
+        <section
+            class="contact section"
+            id="contact"
+        >
 
             <div class="container contact-grid">
 
-                <div>
+                <div class="contact-content reveal">
 
-                    <p class="section-label">CONTACT</p>
+                    <p class="section-label">
+                        CONTACT
+                    </p>
 
                     <h2>
-                        Come and<br>
+                        Come and
+                        <br>
                         <span>visit us.</span>
                     </h2>
 
                     <p class="contact-description">
-                        We would love to welcome you to La Tavola.
+                        We would love to welcome you to
+                        La Tavola and share a taste of Italy with you.
                     </p>
+
+                    <a
+                        href="#reservation"
+                        class="btn btn-outline"
+                    >
+                        Make a Reservation
+                    </a>
 
                 </div>
 
-                <div class="contact-info">
 
-                    <div>
-                        <span>📍</span>
-                        <p>
-                            25 Via Roma<br>
-                            Florence, Italy
-                        </p>
+                <div class="contact-info reveal">
+
+                    <div class="contact-item">
+
+                        <span>⌖</span>
+
+                        <div>
+                            <strong>
+                                Address
+                            </strong>
+
+                            <p>
+                                25 Via Roma
+                                <br>
+                                Florence, Italy
+                            </p>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <span>📞</span>
-                        <p>+39 055 123 4567</p>
+
+                    <div class="contact-item">
+
+                        <span>◉</span>
+
+                        <div>
+                            <strong>
+                                Phone
+                            </strong>
+
+                            <p>
+                                +39 055 123 4567
+                            </p>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <span>✉️</span>
-                        <p>hello@latavola.com</p>
+
+                    <div class="contact-item">
+
+                        <span>✉</span>
+
+                        <div>
+                            <strong>
+                                Email
+                            </strong>
+
+                            <p>
+                                hello@latavola.com
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <span>◷</span>
+
+                        <div>
+                            <strong>
+                                Opening Hours
+                            </strong>
+
+                            <p>
+                                Mon – Sun
+                                <br>
+                                12:00 – 23:00
+                            </p>
+                        </div>
+
                     </div>
 
                 </div>
@@ -462,29 +980,94 @@
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
 
         <div class="container footer-content">
 
-            <div class="logo">
+            <a
+                href="#home"
+                class="logo"
+                aria-label="La Tavola Home"
+            >
                 La<span>Tavola</span>
-            </div>
+            </a>
 
             <p>
                 © 2026 La Tavola. All rights reserved.
             </p>
 
             <div class="socials">
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
+
+                <a
+                    href="#"
+                    aria-label="Instagram"
+                >
+                    Instagram
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="Facebook"
+                >
+                    Facebook
+                </a>
+
             </div>
 
         </div>
 
     </footer>
 
+
+    <!-- =========================
+         TOAST NOTIFICATION
+    ========================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+        <span class="toast-icon">✓</span>
+
+        <div>
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+            <p id="toastMessage">
+                Your reservation has been received.
+            </p>
+        </div>
+
+        <button
+            id="toastClose"
+            type="button"
+            aria-label="Close notification"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <!-- Back To Top -->
+
+    <button
+        class="back-to-top"
+        id="backToTop"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+
+    <!-- JavaScript -->
 
     <script src="script.js"></script>
 

@@ -1,68 +1,211 @@
 ```javascript
-// ===============================
-// MOBILE MENU
-// ===============================
+/* =========================================
+   LA TAVOLA — PREMIUM JAVASCRIPT
+========================================= */
+
+
+/* =========================
+   ELEMENTS
+========================= */
+
+const header = document.getElementById("header");
 
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
-menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-
-
-// Close mobile menu after clicking a link
-
-document.querySelectorAll(".nav-links a").forEach(link => {
-
-    link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-    });
-
-});
-
-
-// ===============================
-// MENU FILTER
-// ===============================
-
 const filterButtons = document.querySelectorAll(".filter-btn");
 const menuCards = document.querySelectorAll(".menu-card");
+
+const reservationForm =
+    document.getElementById("reservationForm");
+
+const dateInput =
+    document.getElementById("date");
+
+const toast =
+    document.getElementById("toast");
+
+const toastTitle =
+    document.getElementById("toastTitle");
+
+const toastMessage =
+    document.getElementById("toastMessage");
+
+const toastClose =
+    document.getElementById("toastClose");
+
+const backToTop =
+    document.getElementById("backToTop");
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+if (menuToggle && navLinks) {
+
+    menuToggle.addEventListener("click", () => {
+
+        const isOpen =
+            navLinks.classList.toggle("active");
+
+        menuToggle.classList.toggle(
+            "active",
+            isOpen
+        );
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
+
+    });
+
+
+    /* Close menu after clicking link */
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navLinks.classList.remove("active");
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
+
+    /* Close when clicking outside */
+
+    document.addEventListener("click", event => {
+
+        const clickedInsideMenu =
+            navLinks.contains(event.target);
+
+        const clickedButton =
+            menuToggle.contains(event.target);
+
+        if (
+            !clickedInsideMenu &&
+            !clickedButton &&
+            navLinks.classList.contains("active")
+        ) {
+
+            navLinks.classList.remove("active");
+
+            menuToggle.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+    });
+
+}
+
+
+/* =========================
+   HEADER SCROLL EFFECT
+========================= */
+
+function updateHeader() {
+
+    if (!header) return;
+
+    if (window.scrollY > 40) {
+
+        header.classList.add("scrolled");
+
+    } else {
+
+        header.classList.remove("scrolled");
+
+    }
+
+}
+
+window.addEventListener(
+    "scroll",
+    updateHeader,
+    { passive: true }
+);
+
+updateHeader();
+
+
+/* =========================
+   MENU FILTER
+========================= */
 
 filterButtons.forEach(button => {
 
     button.addEventListener("click", () => {
 
-        // Remove active from all buttons
+        /* Active button */
+
         filterButtons.forEach(btn => {
+
             btn.classList.remove("active");
+
         });
 
-        // Activate clicked button
         button.classList.add("active");
 
-        const filter = button.dataset.filter;
+
+        /* Selected category */
+
+        const filter =
+            button.dataset.filter;
+
+
+        /* Filter cards */
 
         menuCards.forEach(card => {
 
-            const category = card.dataset.category;
+            const category =
+                card.dataset.category;
 
-            if (filter === "all" || category === filter) {
+            const shouldShow =
+                filter === "all" ||
+                category === filter;
+
+
+            if (shouldShow) {
 
                 card.style.display = "block";
 
-                setTimeout(() => {
+                requestAnimationFrame(() => {
+
                     card.style.opacity = "1";
-                    card.style.transform = "translateY(0)";
-                }, 50);
+
+                    card.style.transform =
+                        "translateY(0)";
+
+                });
 
             } else {
 
                 card.style.opacity = "0";
-                card.style.transform = "translateY(15px)";
+
+                card.style.transform =
+                    "translateY(15px)";
 
                 setTimeout(() => {
+
                     card.style.display = "none";
+
                 }, 250);
 
             }
@@ -74,90 +217,423 @@ filterButtons.forEach(button => {
 });
 
 
-// ===============================
-// RESERVATION
-// ===============================
+/* =========================
+   RESERVATION DATE
+========================= */
 
-const reservationForm =
-    document.getElementById("reservationForm");
+if (dateInput) {
 
-reservationForm.addEventListener("submit", function(event) {
+    const today = new Date();
 
-    event.preventDefault();
+    const year =
+        today.getFullYear();
 
-    const name =
-        document.getElementById("name").value;
+    const month =
+        String(
+            today.getMonth() + 1
+        ).padStart(2, "0");
 
-    const date =
-        document.getElementById("date").value;
+    const day =
+        String(
+            today.getDate()
+        ).padStart(2, "0");
 
-    const guests =
-        document.getElementById("guests").value;
+    const todayString =
+        `${year}-${month}-${day}`;
 
-    if (!name || !date) {
-        alert("Please complete all required fields.");
-        return;
-    }
+    dateInput.min = todayString;
 
-    alert(
-        `Thank you ${name}! Your reservation for ${guests} guest(s) on ${date} has been received.`
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+let toastTimer;
+
+
+function showToast(
+    title,
+    message
+) {
+
+    if (!toast) return;
+
+    toastTitle.textContent = title;
+
+    toastMessage.textContent = message;
+
+    toast.classList.add("show");
+
+
+    clearTimeout(toastTimer);
+
+
+    toastTimer = setTimeout(() => {
+
+        hideToast();
+
+    }, 5000);
+
+}
+
+
+function hideToast() {
+
+    if (!toast) return;
+
+    toast.classList.remove("show");
+
+}
+
+
+if (toastClose) {
+
+    toastClose.addEventListener(
+        "click",
+        hideToast
     );
 
-    reservationForm.reset();
-
-});
+}
 
 
-// ===============================
-// MINIMUM DATE
-// ===============================
+/* =========================
+   RESERVATION FORM
+========================= */
 
-const dateInput = document.getElementById("date");
+if (reservationForm) {
 
-const today = new Date();
+    reservationForm.addEventListener(
+        "submit",
+        event => {
 
-const year = today.getFullYear();
-const month = String(today.getMonth() + 1).padStart(2, "0");
-const day = String(today.getDate()).padStart(2, "0");
-
-dateInput.min = `${year}-${month}-${day}`;
+            event.preventDefault();
 
 
-// ===============================
-// SCROLL REVEAL
-// ===============================
+            const name =
+                document
+                    .getElementById("name")
+                    .value
+                    .trim();
 
-const revealElements = document.querySelectorAll(
-    ".feature, .menu-card, .about-content, .about-image"
-);
+            const date =
+                document
+                    .getElementById("date")
+                    .value;
 
-const observer = new IntersectionObserver(
-    (entries) => {
+            const time =
+                document
+                    .getElementById("time")
+                    .value;
 
-        entries.forEach(entry => {
+            const guests =
+                document
+                    .getElementById("guests")
+                    .value;
 
-            if (entry.isIntersecting) {
+            const phone =
+                document
+                    .getElementById("phone")
+                    .value
+                    .trim();
 
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
 
-                observer.unobserve(entry.target);
+            /* Basic validation */
+
+            if (
+                !name ||
+                !date ||
+                !time ||
+                !guests ||
+                !phone
+            ) {
+
+                showToast(
+                    "Missing information",
+                    "Please complete all reservation fields."
+                );
+
+                return;
+
             }
 
-        });
 
-    },
-    {
-        threshold: 0.15
+            /* Validate phone */
+
+            const phonePattern =
+                /^[+0-9\s()-]{7,20}$/;
+
+
+            if (
+                !phonePattern.test(phone)
+            ) {
+
+                showToast(
+                    "Invalid phone",
+                    "Please enter a valid phone number."
+                );
+
+                return;
+
+            }
+
+
+            /* Check date */
+
+            const selectedDate =
+                new Date(
+                    date + "T00:00:00"
+                );
+
+            const today =
+                new Date();
+
+            today.setHours(
+                0,
+                0,
+                0,
+                0
+            );
+
+
+            if (
+                selectedDate < today
+            ) {
+
+                showToast(
+                    "Invalid date",
+                    "Please choose a future date."
+                );
+
+                return;
+
+            }
+
+
+            /* Format date */
+
+            const formattedDate =
+                selectedDate.toLocaleDateString(
+                    "en-GB",
+                    {
+                        day: "2-digit",
+                        month: "long",
+                        year: "numeric"
+                    }
+                );
+
+
+            /* Success */
+
+            showToast(
+                "Reservation received",
+                `${name}, your table for ${guests} guest(s) on ${formattedDate} at ${time} has been requested.`
+            );
+
+
+            reservationForm.reset();
+
+
+            /* Restore today's minimum date */
+
+            if (dateInput) {
+
+                const now =
+                    new Date();
+
+                const y =
+                    now.getFullYear();
+
+                const m =
+                    String(
+                        now.getMonth() + 1
+                    ).padStart(2, "0");
+
+                const d =
+                    String(
+                        now.getDate()
+                    ).padStart(2, "0");
+
+                dateInput.min =
+                    `${y}-${m}-${d}`;
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const revealElements =
+    document.querySelectorAll(
+        ".reveal"
+    );
+
+
+if (
+    "IntersectionObserver" in window
+) {
+
+    const revealObserver =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(
+                    entry => {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            revealObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    }
+                );
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    revealElements.forEach(
+        element => {
+
+            revealObserver.observe(
+                element
+            );
+
+        }
+    );
+
+} else {
+
+    revealElements.forEach(
+        element => {
+
+            element.classList.add(
+                "visible"
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+function updateBackToTop() {
+
+    if (!backToTop) return;
+
+    if (window.scrollY > 600) {
+
+        backToTop.classList.add(
+            "show"
+        );
+
+    } else {
+
+        backToTop.classList.remove(
+            "show"
+        );
+
+    }
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    updateBackToTop,
+    { passive: true }
+);
+
+
+if (backToTop) {
+
+    backToTop.addEventListener(
+        "click",
+        () => {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+    );
+
+}
+
+
+updateBackToTop();
+
+
+/* =========================
+   ESCAPE KEY
+========================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            event.key === "Escape" &&
+            navLinks &&
+            navLinks.classList.contains("active")
+        ) {
+
+            navLinks.classList.remove(
+                "active"
+            );
+
+            menuToggle.classList.remove(
+                "active"
+            );
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
     }
 );
 
-revealElements.forEach(element => {
 
-    element.style.opacity = "0";
-    element.style.transform = "translateY(30px)";
+/* =========================
+   CURRENT YEAR
+========================= */
 
-    observer.observe(element);
+const footerYear =
+    document.querySelector(
+        "footer p"
+    );
 
-});
+if (footerYear) {
+
+    footerYear.textContent =
+        `© ${new Date().getFullYear()} La Tavola. All rights reserved.`;
+
+}
 ```

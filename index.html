@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +26,7 @@
     <!-- ================= HEADER ================= -->
 
     <header class="header" id="header">
+
         <nav class="navbar container">
 
             <a href="#home" class="logo">
@@ -50,8 +52,11 @@
                 <a href="#reservation">Reservation</a>
                 <a href="#contact">Contact</a>
 
-                <!-- CART -->
-                <button class="cart-button" id="cartButton" type="button">
+                <button
+                    class="cart-button"
+                    id="cartButton"
+                    type="button"
+                >
                     🛒
                     <span>Cart</span>
                     <b id="cartCount">0</b>
@@ -64,6 +69,7 @@
             </div>
 
         </nav>
+
     </header>
 
 
@@ -145,6 +151,192 @@
     </aside>
 
 
+    <!-- =====================================================
+         CHECKOUT
+         ===================================================== -->
+
+    <div
+        class="checkout-overlay"
+        id="checkoutOverlay"
+    >
+
+        <div class="checkout-modal">
+
+            <button
+                class="checkout-close"
+                id="checkoutClose"
+                type="button"
+                aria-label="Close checkout"
+            >
+                ×
+            </button>
+
+
+            <div class="checkout-header">
+
+                <p class="section-label">
+                    YOUR ORDER
+                </p>
+
+                <h2>
+                    Checkout
+                </h2>
+
+                <p>
+                    Complete your information to place your order.
+                </p>
+
+            </div>
+
+
+            <form id="checkoutForm">
+
+                <div class="checkout-grid">
+
+                    <div class="checkout-field">
+
+                        <label for="checkoutName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="checkoutName"
+                            placeholder="Your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="checkout-field">
+
+                        <label for="checkoutPhone">
+                            Phone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="checkoutPhone"
+                            placeholder="+216 XX XXX XXX"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="checkout-field">
+
+                    <label for="orderType">
+                        Order Type
+                    </label>
+
+                    <select
+                        id="orderType"
+                        required
+                    >
+
+                        <option value="">
+                            Choose an option
+                        </option>
+
+                        <option value="Delivery">
+                            Delivery
+                        </option>
+
+                        <option value="Pickup">
+                            Pickup
+                        </option>
+
+                        <option value="Dine-in">
+                            Dine-in
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div
+                    class="checkout-field"
+                    id="addressField"
+                >
+
+                    <label for="checkoutAddress">
+                        Address
+                    </label>
+
+                    <input
+                        type="text"
+                        id="checkoutAddress"
+                        placeholder="Your delivery address"
+                    >
+
+                </div>
+
+
+                <div class="checkout-field">
+
+                    <label for="checkoutNotes">
+                        Order Notes
+                    </label>
+
+                    <textarea
+                        id="checkoutNotes"
+                        rows="3"
+                        placeholder="Extra instructions..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="checkout-summary">
+
+                    <div>
+
+                        <span>
+                            Items
+                        </span>
+
+                        <strong id="checkoutItemsCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="checkout-total-row">
+
+                        <span>
+                            Total
+                        </span>
+
+                        <strong id="checkoutTotal">
+                            $0.00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary checkout-submit"
+                >
+                    Place Order
+                    <span>→</span>
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
     <!-- ================= HERO ================= -->
 
     <main>
@@ -181,6 +373,7 @@
 
                 </div>
 
+
                 <div class="hero-stats">
 
                     <div class="stat">
@@ -212,38 +405,56 @@
             <div class="container features-grid">
 
                 <article class="feature reveal">
-                    <div class="feature-icon">✦</div>
 
-                    <h3>Fresh Ingredients</h3>
+                    <div class="feature-icon">
+                        ✦
+                    </div>
+
+                    <h3>
+                        Fresh Ingredients
+                    </h3>
 
                     <p>
                         We choose fresh, quality ingredients
                         for every dish we prepare.
                     </p>
+
                 </article>
 
 
                 <article class="feature reveal">
-                    <div class="feature-icon">⌁</div>
 
-                    <h3>Traditional Recipes</h3>
+                    <div class="feature-icon">
+                        ⌁
+                    </div>
+
+                    <h3>
+                        Traditional Recipes
+                    </h3>
 
                     <p>
                         Authentic Italian recipes passed down
                         through generations.
                     </p>
+
                 </article>
 
 
                 <article class="feature reveal">
-                    <div class="feature-icon">♡</div>
 
-                    <h3>Made With Love</h3>
+                    <div class="feature-icon">
+                        ♡
+                    </div>
+
+                    <h3>
+                        Made With Love
+                    </h3>
 
                     <p>
                         Every plate is prepared with passion,
                         care, and attention to detail.
                     </p>
+
                 </article>
 
             </div>
@@ -253,7 +464,10 @@
 
         <!-- ================= ABOUT ================= -->
 
-        <section class="about section" id="about">
+        <section
+            class="about section"
+            id="about"
+        >
 
             <div class="container about-grid">
 
@@ -265,8 +479,16 @@
                     >
 
                     <div class="experience-badge">
-                        <strong>12+</strong>
-                        <span>Years of<br>Tradition</span>
+
+                        <strong>
+                            12+
+                        </strong>
+
+                        <span>
+                            Years of<br>
+                            Tradition
+                        </span>
+
                     </div>
 
                 </div>
@@ -295,6 +517,7 @@
                         with fresh ingredients.
                     </p>
 
+
                     <div class="about-highlights">
 
                         <div>
@@ -314,7 +537,11 @@
 
                     </div>
 
-                    <a href="#menu" class="text-link">
+
+                    <a
+                        href="#menu"
+                        class="text-link"
+                    >
                         Discover our menu →
                     </a>
 
@@ -327,7 +554,10 @@
 
         <!-- ================= MENU ================= -->
 
-        <section class="menu section" id="menu">
+        <section
+            class="menu section"
+            id="menu"
+        >
 
             <div class="container">
 
@@ -352,19 +582,31 @@
 
                 <div class="filter-buttons">
 
-                    <button class="filter-btn active" data-filter="all">
+                    <button
+                        class="filter-btn active"
+                        data-filter="all"
+                    >
                         All
                     </button>
 
-                    <button class="filter-btn" data-filter="pizza">
+                    <button
+                        class="filter-btn"
+                        data-filter="pizza"
+                    >
                         Pizza
                     </button>
 
-                    <button class="filter-btn" data-filter="pasta">
+                    <button
+                        class="filter-btn"
+                        data-filter="pasta"
+                    >
                         Pasta
                     </button>
 
-                    <button class="filter-btn" data-filter="dessert">
+                    <button
+                        class="filter-btn"
+                        data-filter="dessert"
+                    >
                         Desserts
                     </button>
 
@@ -374,7 +616,7 @@
                 <div class="menu-grid">
 
 
-                    <!-- ================= MARHERITA ================= -->
+                    <!-- MARHERITA -->
 
                     <article
                         class="menu-card reveal"
@@ -397,11 +639,19 @@
 
                         </div>
 
+
                         <div class="menu-info">
 
                             <div class="menu-title">
-                                <h3>Margherita</h3>
-                                <strong>$12</strong>
+
+                                <h3>
+                                    Margherita
+                                </h3>
+
+                                <strong>
+                                    $12
+                                </strong>
+
                             </div>
 
                             <p>
@@ -423,7 +673,7 @@
                     </article>
 
 
-                    <!-- ================= TRUFFLE PIZZA ================= -->
+                    <!-- TRUFFLE PIZZA -->
 
                     <article
                         class="menu-card reveal"
@@ -446,11 +696,19 @@
 
                         </div>
 
+
                         <div class="menu-info">
 
                             <div class="menu-title">
-                                <h3>Truffle Pizza</h3>
-                                <strong>$18</strong>
+
+                                <h3>
+                                    Truffle Pizza
+                                </h3>
+
+                                <strong>
+                                    $18
+                                </strong>
+
                             </div>
 
                             <p>
@@ -472,7 +730,7 @@
                     </article>
 
 
-                    <!-- ================= CARBONARA ================= -->
+                    <!-- CARBONARA -->
 
                     <article
                         class="menu-card reveal"
@@ -491,11 +749,19 @@
 
                         </div>
 
+
                         <div class="menu-info">
 
                             <div class="menu-title">
-                                <h3>Carbonara</h3>
-                                <strong>$15</strong>
+
+                                <h3>
+                                    Carbonara
+                                </h3>
+
+                                <strong>
+                                    $15
+                                </strong>
+
                             </div>
 
                             <p>
@@ -517,7 +783,7 @@
                     </article>
 
 
-                    <!-- ================= TRUFFLE PASTA ================= -->
+                    <!-- TRUFFLE PASTA -->
 
                     <article
                         class="menu-card reveal"
@@ -540,11 +806,19 @@
 
                         </div>
 
+
                         <div class="menu-info">
 
                             <div class="menu-title">
-                                <h3>Truffle Pasta</h3>
-                                <strong>$19</strong>
+
+                                <h3>
+                                    Truffle Pasta
+                                </h3>
+
+                                <strong>
+                                    $19
+                                </strong>
+
                             </div>
 
                             <p>
@@ -566,7 +840,7 @@
                     </article>
 
 
-                    <!-- ================= TIRAMISU ================= -->
+                    <!-- TIRAMISU -->
 
                     <article
                         class="menu-card reveal"
@@ -585,11 +859,19 @@
 
                         </div>
 
+
                         <div class="menu-info">
 
                             <div class="menu-title">
-                                <h3>Tiramisu</h3>
-                                <strong>$8</strong>
+
+                                <h3>
+                                    Tiramisu
+                                </h3>
+
+                                <strong>
+                                    $8
+                                </strong>
+
                             </div>
 
                             <p>
@@ -611,7 +893,7 @@
                     </article>
 
 
-                    <!-- ================= PANNA COTTA ================= -->
+                    <!-- PANNA COTTA -->
 
                     <article
                         class="menu-card reveal"
@@ -630,11 +912,19 @@
 
                         </div>
 
+
                         <div class="menu-info">
 
                             <div class="menu-title">
-                                <h3>Panna Cotta</h3>
-                                <strong>$7</strong>
+
+                                <h3>
+                                    Panna Cotta
+                                </h3>
+
+                                <strong>
+                                    $7
+                                </strong>
+
                             </div>
 
                             <p>
@@ -680,7 +970,10 @@
                     <span>Good moments.</span>
                 </h2>
 
-                <a href="#reservation" class="btn btn-primary">
+                <a
+                    href="#reservation"
+                    class="btn btn-primary"
+                >
                     Reserve Your Table
                 </a>
 
@@ -691,7 +984,10 @@
 
         <!-- ================= RESERVATION ================= -->
 
-        <section class="reservation section" id="reservation">
+        <section
+            class="reservation section"
+            id="reservation"
+        >
 
             <div class="container reservation-grid">
 
@@ -711,16 +1007,32 @@
                         Italian dining experience.
                     </p>
 
+
                     <div class="reservation-info">
 
                         <div>
-                            <strong>Opening Hours</strong>
-                            <span>Every day · 12:00 — 23:00</span>
+
+                            <strong>
+                                Opening Hours
+                            </strong>
+
+                            <span>
+                                Every day · 12:00 — 23:00
+                            </span>
+
                         </div>
 
+
                         <div>
-                            <strong>Phone</strong>
-                            <span>+39 055 123 4567</span>
+
+                            <strong>
+                                Phone
+                            </strong>
+
+                            <span>
+                                +39 055 123 4567
+                            </span>
+
                         </div>
 
                     </div>
@@ -792,19 +1104,42 @@
                                 Time
                             </label>
 
-                            <select id="time" required>
+                            <select
+                                id="time"
+                                required
+                            >
 
                                 <option value="">
                                     Select time
                                 </option>
 
-                                <option value="18:00">18:00</option>
-                                <option value="18:30">18:30</option>
-                                <option value="19:00">19:00</option>
-                                <option value="19:30">19:30</option>
-                                <option value="20:00">20:00</option>
-                                <option value="20:30">20:30</option>
-                                <option value="21:00">21:00</option>
+                                <option value="18:00">
+                                    18:00
+                                </option>
+
+                                <option value="18:30">
+                                    18:30
+                                </option>
+
+                                <option value="19:00">
+                                    19:00
+                                </option>
+
+                                <option value="19:30">
+                                    19:30
+                                </option>
+
+                                <option value="20:00">
+                                    20:00
+                                </option>
+
+                                <option value="20:30">
+                                    20:30
+                                </option>
+
+                                <option value="21:00">
+                                    21:00
+                                </option>
 
                             </select>
 
@@ -819,20 +1154,46 @@
                             Number of Guests
                         </label>
 
-                        <select id="guests" required>
+                        <select
+                            id="guests"
+                            required
+                        >
 
                             <option value="">
                                 Select guests
                             </option>
 
-                            <option value="1">1 Guest</option>
-                            <option value="2">2 Guests</option>
-                            <option value="3">3 Guests</option>
-                            <option value="4">4 Guests</option>
-                            <option value="5">5 Guests</option>
-                            <option value="6">6 Guests</option>
-                            <option value="7">7 Guests</option>
-                            <option value="8">8 Guests</option>
+                            <option value="1">
+                                1 Guest
+                            </option>
+
+                            <option value="2">
+                                2 Guests
+                            </option>
+
+                            <option value="3">
+                                3 Guests
+                            </option>
+
+                            <option value="4">
+                                4 Guests
+                            </option>
+
+                            <option value="5">
+                                5 Guests
+                            </option>
+
+                            <option value="6">
+                                6 Guests
+                            </option>
+
+                            <option value="7">
+                                7 Guests
+                            </option>
+
+                            <option value="8">
+                                8 Guests
+                            </option>
 
                         </select>
 
@@ -855,7 +1216,10 @@
 
         <!-- ================= CONTACT ================= -->
 
-        <section class="contact section" id="contact">
+        <section
+            class="contact section"
+            id="contact"
+        >
 
             <div class="container">
 
@@ -877,9 +1241,13 @@
 
                     <div class="contact-card reveal">
 
-                        <span class="contact-icon">⌖</span>
+                        <span class="contact-icon">
+                            ⌖
+                        </span>
 
-                        <h3>Address</h3>
+                        <h3>
+                            Address
+                        </h3>
 
                         <p>
                             25 Via Roma<br>
@@ -891,9 +1259,13 @@
 
                     <div class="contact-card reveal">
 
-                        <span class="contact-icon">☎</span>
+                        <span class="contact-icon">
+                            ☎
+                        </span>
 
-                        <h3>Phone</h3>
+                        <h3>
+                            Phone
+                        </h3>
 
                         <p>
                             +39 055 123 4567
@@ -904,9 +1276,13 @@
 
                     <div class="contact-card reveal">
 
-                        <span class="contact-icon">✉</span>
+                        <span class="contact-icon">
+                            ✉
+                        </span>
 
-                        <h3>Email</h3>
+                        <h3>
+                            Email
+                        </h3>
 
                         <p>
                             hello@latavola.com
@@ -917,9 +1293,13 @@
 
                     <div class="contact-card reveal">
 
-                        <span class="contact-icon">◷</span>
+                        <span class="contact-icon">
+                            ◷
+                        </span>
 
-                        <h3>Opening Hours</h3>
+                        <h3>
+                            Opening Hours
+                        </h3>
 
                         <p>
                             Monday — Sunday<br>
@@ -959,22 +1339,42 @@
 
             <div class="footer-links">
 
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#menu">Menu</a>
-                <a href="#reservation">Reservation</a>
-                <a href="#contact">Contact</a>
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#menu">
+                    Menu
+                </a>
+
+                <a href="#reservation">
+                    Reservation
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
 
             </div>
 
 
             <div class="footer-social">
 
-                <a href="#" aria-label="Instagram">
+                <a
+                    href="#"
+                    aria-label="Instagram"
+                >
                     Instagram
                 </a>
 
-                <a href="#" aria-label="Facebook">
+                <a
+                    href="#"
+                    aria-label="Facebook"
+                >
                     Facebook
                 </a>
 
@@ -986,7 +1386,9 @@
         <div class="footer-bottom">
 
             <p>
-                © <span id="year"></span> La Tavola.
+                ©
+                <span id="year"></span>
+                La Tavola.
                 All rights reserved.
             </p>
 
@@ -997,7 +1399,10 @@
 
     <!-- ================= TOAST ================= -->
 
-    <div class="toast" id="toast">
+    <div
+        class="toast"
+        id="toast"
+    >
 
         <div class="toast-content">
 
@@ -1010,6 +1415,7 @@
             </p>
 
         </div>
+
 
         <button
             id="toastClose"
@@ -1035,4 +1441,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>

@@ -1588,3 +1588,231 @@ a {
         padding: 18px;
     }
 }
+/* =====================================================
+   CHECKOUT
+   ===================================================== */
+
+.checkout-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(12px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s ease;
+
+    z-index: 2000;
+}
+
+.checkout-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.checkout-modal {
+    position: relative;
+
+    width: min(650px, 100%);
+
+    max-height: 90vh;
+    overflow-y: auto;
+
+    background: #111;
+
+    border: 1px solid rgba(212, 175, 55, 0.25);
+
+    border-radius: 24px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.6);
+
+    transform: translateY(25px) scale(0.98);
+
+    transition: 0.3s ease;
+}
+
+.checkout-overlay.active .checkout-modal {
+    transform: translateY(0) scale(1);
+}
+
+.checkout-close {
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    color: #fff;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.checkout-close:hover {
+    background: rgba(212, 175, 55, 0.2);
+}
+
+.checkout-header {
+    margin-bottom: 25px;
+    padding-right: 45px;
+}
+
+.checkout-header h2 {
+    margin: 5px 0 8px;
+    font-size: 32px;
+}
+
+.checkout-header p:last-child {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.checkout-field {
+    margin-bottom: 18px;
+}
+
+.checkout-field label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.checkout-field input,
+.checkout-field select,
+.checkout-field textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    background: rgba(255, 255, 255, 0.05);
+
+    color: #fff;
+
+    outline: none;
+
+    font-family: inherit;
+
+    transition: 0.2s ease;
+}
+
+.checkout-field textarea {
+    resize: vertical;
+}
+
+.checkout-field input:focus,
+.checkout-field select:focus,
+.checkout-field textarea:focus {
+    border-color: rgba(212, 175, 55, 0.7);
+
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.checkout-field select option {
+    background: #111;
+    color: #fff;
+}
+
+.checkout-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.checkout-summary {
+    margin-top: 25px;
+
+    padding: 18px;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.checkout-summary > div {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.checkout-summary span {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.checkout-summary strong {
+    color: #fff;
+}
+
+.checkout-total-row {
+    margin-top: 14px;
+
+    padding-top: 14px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.checkout-total-row strong {
+    font-size: 22px;
+
+    color: #d4af37;
+}
+
+.checkout-submit {
+    width: 100%;
+
+    margin-top: 20px;
+
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+
+    .checkout-modal {
+        padding: 25px 18px;
+
+        border-radius: 20px;
+    }
+
+    .checkout-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .checkout-header h2 {
+        font-size: 27px;
+    }
+
+}
